@@ -15,12 +15,13 @@ router.get('/video', function(req, res, next) {
     .save(`${__dirname}/../mp3-downloads/firstdownloaded.mp3`)
     .on('end', () => {
       console.log(`Done downloading ${req.query.url}.mp3`);
+      res.status(200)
+        .download(`${__dirname}/../mp3-downloads/firstdownloaded.mp3`);
     })
     .on('error', function(err) {
       console.log(`Error occured: ${err.message}`);
+      res.status(400).send(`Error downloading from url: ${req.query.url}`);
     });
-
-  res.json(req.query.url);
 });
 
 /* GET home page. */
