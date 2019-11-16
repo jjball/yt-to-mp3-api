@@ -1,8 +1,9 @@
 # yt-to-mp3-api
 REST API for converting youtube videos to mp3s.
 
-Start the server:
-`yarn run start`
+Installation: `yarn install`
+
+Start the server: `yarn run start`
 
 ### Endpoints
 
